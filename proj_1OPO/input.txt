@@ -1,0 +1,10 @@
+ADD 8.9 Aslan Sphere 6
+PRINT
+REM Density > 5
+PRINT
+ADD 3.0 Ivasdasan Cuboid 4 5 6
+PRINT
+REM Owner = Ivasdasan
+PRINT
+ADD 6.2 Yan Cylinder 3 3 5 7
+PRINT
