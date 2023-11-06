@@ -139,21 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Cuboid.cpp" />
-    <ClCompile Include="Cylinder.cpp" />
-    <ClCompile Include="Figure.cpp" />
-    <ClCompile Include="FigureList.cpp" />
-    <ClCompile Include="FigureNode.cpp" />
     <ClCompile Include="proj_1OPO.cpp" />
-    <ClCompile Include="Sphere.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Cuboid.h" />
-    <ClInclude Include="Cylinder.h" />
-    <ClInclude Include="Figure.h" />
-    <ClInclude Include="FigureList.h" />
-    <ClInclude Include="FigureNode.h" />
-    <ClInclude Include="Sphere.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
