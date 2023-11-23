@@ -145,6 +145,7 @@
     <ClCompile Include="FigureList.cpp" />
     <ClCompile Include="FigureNode.cpp" />
     <ClCompile Include="proj_1OPO.cpp" />
+    <ClCompile Include="RemoveIfMatch.cpp" />
     <ClCompile Include="Sphere.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -154,6 +155,9 @@
     <ClInclude Include="FigureList.h" />
     <ClInclude Include="FigureNode.h" />
     <ClInclude Include="Sphere.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="input.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

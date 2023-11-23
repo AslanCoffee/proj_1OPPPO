@@ -9,6 +9,7 @@
 #include "FigureNode.h"
 #include "Sphere.h"
 
+
 using namespace std;
 
 int main() {
@@ -67,7 +68,6 @@ int main() {
 
     return 0;
 }
-//удаление файла из репозиторрия git filterbranch, удалить каталог out
 //разбить по файлам, отдельано список, фигуры, отдельно main, remove if match, функция удаления спереди и сзади как стандартную back и front
 //valgrint динамический оптимизатор кода, чтобы перестал течь память.
 //отедльное коммит в отедльную ветку.
