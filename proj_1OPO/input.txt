@@ -8,3 +8,14 @@ REM Owner = Ivasdasan
 PRINT
 ADD 6.2 Yan Cylinder 3 3 5 7
 PRINT
+ADD saf LOL Cylinder 3 3 5 7
+PRINT
+REM BaseX = 3
+PRINT
+ADD 6.2 5 Cylinder 3 3 5 7
+PRINT
+ADD 6.2 Yan Cylinder as 3 5 7
+PRINT
+ADD 6.4 Yan Cylinder 3 3 5 7
+PRINT
+ADD 6,4 Yan Cylinder 3 3 5
