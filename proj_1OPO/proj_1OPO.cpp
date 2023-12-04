@@ -47,6 +47,11 @@ bool isNumber_D(double& x, istringstream& iss)
     }
 }
 
+void Factory(string line)
+{
+
+}
+
 int main() {
     FigureList figureList;
     ifstream inputFile("input.txt");
