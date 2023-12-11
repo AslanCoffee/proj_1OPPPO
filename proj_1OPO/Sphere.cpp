@@ -24,9 +24,12 @@ bool Sphere::matchesCondition(const std::string& condition) const {
 
     float atribute;
 
-    std::map <std::string, float> map_sphere;
-    map_sphere["Radius"] = radius;
-    map_sphere["Density"] = getDensity();
+    static std::map <std::string, float> map_sphere = {
+        {"Radius", radius},
+        {"Density", getDensity()}
+    };
+    //map_sphere["Radius"] = radius;
+    //map_sphere["Density"] = getDensity();
     atribute = map_sphere[keyword];
 
     char op;

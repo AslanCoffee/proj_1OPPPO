@@ -23,11 +23,16 @@ bool Cuboid::matchesCondition(const std::string& condition) const {
 
     float k_len;
 
-    std::map <std::string, float> map_cuboid;
-    map_cuboid["Length1"] = length1;
-    map_cuboid["Length2"] = length2;
-    map_cuboid["Length3"] = length3;
-    map_cuboid["Density"] = getDensity();
+    static std::map <std::string, float> map_cuboid = {
+        {"Length1", length1},
+        {"Length2", length2},
+        {"Length3", length3},
+        {"Density", getDensity()}
+    };
+    //map_cuboid["Length1"] = length1;
+    //map_cuboid["Length2"] = length2;
+    //map_cuboid["Length3"] = length3;
+    //map_cuboid["Density"] = getDensity();
 
     k_len = map_cuboid[keyword];
 

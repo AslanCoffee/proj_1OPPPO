@@ -23,15 +23,21 @@ bool Cylinder::matchesCondition(const std::string& condition) const {
 
     float cylinder_at;
 
-    std::map <std::string, float> map_cylinder;
-    map_cylinder["BaseX"] = baseX;
-    map_cylinder["BaseY"] = baseY;
-    map_cylinder["Height"] = height;
-    map_cylinder["BaseRadius"] = baseRadius;
-    map_cylinder["Density"] = getDensity();
+    static std::map <std::string, float> map_cylinder =
+    {
+        {"BaseX", baseX},
+        {"BaseY", baseY},
+        {"Height", height},
+        {"BaseRadius", baseRadius},
+        {"Density",  getDensity()}
+    };
+    //map_cylinder["BaseX"] = baseX;
+    //map_cylinder["BaseY"] = baseY;
+    //map_cylinder["Height"] = height;
+    //map_cylinder["BaseRadius"] = baseRadius;
+    //map_cylinder["Density"] = getDensity();
 
     cylinder_at = map_cylinder[keyword];
-
 
     char op;
     float value;
