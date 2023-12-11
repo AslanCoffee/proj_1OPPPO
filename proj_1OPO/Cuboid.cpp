@@ -31,40 +31,6 @@ bool Cuboid::matchesCondition(const std::string& condition) const {
 
     k_len = map_cuboid[keyword];
 
-    //switch (Key_return(keyword))
-    //{
-    //case 6:
-    //    k_len = getDensity();
-    //    break;
-    //case 7:
-    //    k_len = length1;
-    //    break;
-    //case 8:
-    //    k_len = length2;
-    //    break;
-    //case 9:
-    //    k_len = length3;
-    //    break;
-    //default:
-    //    return false;
-    //    break;
-    //}
-
-
-    //if (keyword == "Length1") {
-    //    k_len = length1;
-    //}
-    //else if (keyword == "Length2") {
-    //    k_len = length2;
-    //}
-    //else if (keyword == "Length3") {
-    //    k_len = length3;
-    //}
-    //else if (keyword == "Density") {
-    //    k_len = getDensity();
-    //}
-    //else return false;
-
     char op;
     float value;
     iss >> op >> value;

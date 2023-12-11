@@ -32,60 +32,9 @@ bool Cylinder::matchesCondition(const std::string& condition) const {
 
     cylinder_at = map_cylinder[keyword];
 
-    //switch (Key_return(keyword))
-    //{
-    //case 2:
-    //    cylinder_at = baseX;
-    //    break;
-    //case 3:
-    //    cylinder_at = baseY;
-    //    break;
-    //case 4:
-    //    cylinder_at = height;
-    //    break;
-    //case 5:
-    //    cylinder_at = baseRadius;
-    //    break;
-    //case 6:
-    //    cylinder_at = getDensity();
-    //    break;
-    //default:
-    //    return false;
-    //    break;
-    //}
-
-
-    /*cylinder_at = Key_return(keyword);
-    * 
-    if (keyword == "BaseX") {
-        cylinder_at = baseX;
-    }
-    else if (keyword == "BaseY") {
-        cylinder_at = baseY;
-    }
-    else if (keyword == "Height") {
-        cylinder_at = height;
-    }
-    else if (keyword == "BaseRadius") {
-        cylinder_at = baseRadius;
-    }
-    else if (keyword == "Density") {
-        cylinder_at = getDensity();
-    }
-    else return false;*/
 
     char op;
     float value;
     iss >> op >> value;
     return Switch_haha(op, cylinder_at, value);
-    //switch (op) {
-    //case '>':
-    //    return cylinder_at > value;
-    //case '<':
-    //    return cylinder_at < value;
-    //case '=':
-    //    return cylinder_at == value;
-    //default:
-    //    return false;
-    //}
 }

@@ -29,23 +29,6 @@ bool Sphere::matchesCondition(const std::string& condition) const {
     map_sphere["Density"] = getDensity();
     atribute = map_sphere[keyword];
 
-    //switch (Key_return(keyword))
-    //{
-    //case 1:
-    //    atribute = radius;
-    //    break;
-    //case 6:
-    //    atribute = getDensity();
-    //    break;
-    //default:
-    //    return false;
-    //    break;
-    //}
-
-    //if (keyword == "Density") atribute = getDensity();
-    //else if (keyword == "Radius")atribute = radius;
-    //else return false;
-
     char op;
     float value;
     iss >> op >> value;
