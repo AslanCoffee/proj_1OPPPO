@@ -14,6 +14,19 @@
 
 using namespace std;
 
+enum string_code {
+    Cuboid_,
+    Sphere_,
+    Cylinder_
+};
+
+string_code hashit(string const& inString)
+{
+    if (inString == "Cuboid") return Cuboid_;
+    if (inString == "Sphere") return Sphere_;
+    if (inString == "Cylinder") return Cylinder_;
+}
+
 bool isString(const std::string& input) {
     int y = 0, size;
     size = input.length();
@@ -47,9 +60,33 @@ bool isNumber_D(double& x, istringstream& iss)
     }
 }
 
-void Factory(string line)
+Figure* Factory(istringstream& iss)
 {
-
+    double density;
+    string owner;
+    if (isNumber_D(density, iss) && iss >> owner && isString(owner));
+    string type;
+    iss >> type;
+    switch (hashit(type))
+    {
+    case Cuboid_:
+        int l1, l2, l3;
+        if (isNumber(l1, iss) && isNumber(l2, iss) && isNumber(l3, iss)) return new Cuboid(density, owner, l1, l2, l3);
+        else break;
+        break;
+    case Cylinder_:
+        int bx, by, h, br;
+        if (isNumber(bx, iss) && isNumber(by, iss) && isNumber(h, iss) && isNumber(br, iss)) return new Cylinder(density, owner, bx, by, h, br);
+        else break;
+        break;
+    case Sphere_:
+        int radius;
+        if (isNumber(radius, iss)) return new Sphere(density, owner, radius);
+        else break;
+        break;
+    default:
+        break;
+    }
 }
 
 int main() {
@@ -68,28 +105,29 @@ int main() {
         iss >> command;
 
         if (command == "ADD") {
-            double density;
+            /*double density;
             string owner;
             if (isNumber_D(density, iss) && iss >> owner && isString(owner));
-            else continue;
-            string type;
-            iss >> type;
-            if (type == "Sphere") {
-                int radius;
-                if (isNumber(radius, iss)) figureList.push_back(new Sphere(density, owner, radius));
-                else continue;
-            }
-            else if (type == "Cuboid") {
-                int l1, l2, l3;
-                if (isNumber(l1, iss) && isNumber(l2, iss) && isNumber(l3, iss)) figureList.push_back(new Cuboid(density, owner, l1, l2, l3));
-                else continue;
-            }
-            else if (type == "Cylinder") {
-                int bx, by, h, br;
-                if (isNumber(bx, iss) && isNumber(by, iss) && isNumber(h, iss) && isNumber(br, iss)) figureList.push_back(new Cylinder(density, owner, bx, by, h, br));
-                else continue;
-            }
-            else continue;
+            else continue;*/
+            figureList.push_back(Factory(iss));
+            //string type;
+            //iss >> type;
+            //if (type == "Sphere") {
+            //    int radius;
+            //    if (isNumber(radius, iss)) figureList.push_back(new Sphere(density, owner, radius));
+            //    else continue;
+            //}
+            //else if (type == "Cuboid") {
+            //    int l1, l2, l3;
+            //    if (isNumber(l1, iss) && isNumber(l2, iss) && isNumber(l3, iss)) figureList.push_back(new Cuboid(density, owner, l1, l2, l3));
+            //    else continue;
+            //}
+            //else if (type == "Cylinder") {
+            //    int bx, by, h, br;
+            //    if (isNumber(bx, iss) && isNumber(by, iss) && isNumber(h, iss) && isNumber(br, iss)) figureList.push_back(new Cylinder(density, owner, bx, by, h, br));
+            //    else continue;
+            //}
+            //else continue;
         }
         else if (command == "REM") {
             string condition;

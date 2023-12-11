@@ -1,6 +1,7 @@
 #include "Cylinder.h"
 #include <iostream>
 #include <sstream>
+#include <map>
 
 Cylinder::Cylinder(double d, const std::string& o, int bx, int by, int h, int br) : Figure(d, o), baseX(bx), baseY(by), height(h), baseRadius(br) {}
 
@@ -22,6 +23,40 @@ bool Cylinder::matchesCondition(const std::string& condition) const {
 
     float cylinder_at;
 
+    std::map <std::string, float> map_cylinder;
+    map_cylinder["BaseX"] = baseX;
+    map_cylinder["BaseY"] = baseY;
+    map_cylinder["Height"] = height;
+    map_cylinder["BaseRadius"] = baseRadius;
+    map_cylinder["Density"] = getDensity();
+
+    cylinder_at = map_cylinder[keyword];
+
+    //switch (Key_return(keyword))
+    //{
+    //case 2:
+    //    cylinder_at = baseX;
+    //    break;
+    //case 3:
+    //    cylinder_at = baseY;
+    //    break;
+    //case 4:
+    //    cylinder_at = height;
+    //    break;
+    //case 5:
+    //    cylinder_at = baseRadius;
+    //    break;
+    //case 6:
+    //    cylinder_at = getDensity();
+    //    break;
+    //default:
+    //    return false;
+    //    break;
+    //}
+
+
+    /*cylinder_at = Key_return(keyword);
+    * 
     if (keyword == "BaseX") {
         cylinder_at = baseX;
     }
@@ -37,20 +72,20 @@ bool Cylinder::matchesCondition(const std::string& condition) const {
     else if (keyword == "Density") {
         cylinder_at = getDensity();
     }
-    else return false;
+    else return false;*/
 
     char op;
     float value;
     iss >> op >> value;
-
-    switch (op) {
-    case '>':
-        return cylinder_at > value;
-    case '<':
-        return cylinder_at < value;
-    case '=':
-        return cylinder_at == value;
-    default:
-        return false;
-    }
+    return Switch_haha(op, cylinder_at, value);
+    //switch (op) {
+    //case '>':
+    //    return cylinder_at > value;
+    //case '<':
+    //    return cylinder_at < value;
+    //case '=':
+    //    return cylinder_at == value;
+    //default:
+    //    return false;
+    //}
 }
