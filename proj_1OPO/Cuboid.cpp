@@ -37,7 +37,7 @@ bool Cuboid::matchesCondition(const std::string& condition) const {
     k_len = map_cuboid[keyword];
 
     char op;
-    float value;
-    iss >> op >> value;
-    return Switch_haha(op, k_len, value);
+    double value;
+    if (isNumber_D(op, value, iss)) return Switch_haha(op, k_len, value);
+    else return false;
 }

@@ -105,29 +105,7 @@ int main() {
         iss >> command;
 
         if (command == "ADD") {
-            /*double density;
-            string owner;
-            if (isNumber_D(density, iss) && iss >> owner && isString(owner));
-            else continue;*/
             figureList.push_back(Factory(iss));
-            //string type;
-            //iss >> type;
-            //if (type == "Sphere") {
-            //    int radius;
-            //    if (isNumber(radius, iss)) figureList.push_back(new Sphere(density, owner, radius));
-            //    else continue;
-            //}
-            //else if (type == "Cuboid") {
-            //    int l1, l2, l3;
-            //    if (isNumber(l1, iss) && isNumber(l2, iss) && isNumber(l3, iss)) figureList.push_back(new Cuboid(density, owner, l1, l2, l3));
-            //    else continue;
-            //}
-            //else if (type == "Cylinder") {
-            //    int bx, by, h, br;
-            //    if (isNumber(bx, iss) && isNumber(by, iss) && isNumber(h, iss) && isNumber(br, iss)) figureList.push_back(new Cylinder(density, owner, bx, by, h, br));
-            //    else continue;
-            //}
-            //else continue;
         }
         else if (command == "REM") {
             string condition;

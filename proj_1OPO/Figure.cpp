@@ -3,6 +3,7 @@
 #include "FigureList.h"
 #include "Sphere.h"
 #include <iostream>
+#include <string>
 #include <sstream>
 #include <map>
 
@@ -17,7 +18,7 @@ std::string Figure::getOwner() const {
 }
 
 
-float Figure::Switch_haha(char op, float atribute, float value) const
+float Figure::Switch_haha(char op, double atribute, double value) const
 {
     switch (op) {
     case '>':
@@ -28,6 +29,22 @@ float Figure::Switch_haha(char op, float atribute, float value) const
         return atribute == value;
     default:
         return false;
+    }
+}
+
+bool isop(char op) {
+    if (op == '=' || op == '<' || op == '>') return 1;
+    else return false;
+}
+
+bool Figure::isNumber_D(char& op, double& x, std::istringstream& iss) const
+{
+    iss >> op >> x;
+    if (iss.fail() && !isspace(iss.peek()) && !isop(op)) {
+        return 0;
+    }
+    else {
+        return 1;
     }
 }
 

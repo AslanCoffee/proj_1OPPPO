@@ -33,8 +33,7 @@ bool Sphere::matchesCondition(const std::string& condition) const {
     atribute = map_sphere[keyword];
 
     char op;
-    float value;
-    iss >> op >> value;
-
-    return Switch_haha(op, atribute, value);
+    double value;
+    if (isNumber_D(op, value, iss)) return Switch_haha(op, atribute, value);
+    else return false;
 }

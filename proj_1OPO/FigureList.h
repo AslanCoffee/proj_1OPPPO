@@ -12,4 +12,5 @@ public:
     void removeIfMatches(const std::string& condition);
     void printAll() const;
     ~FigureList();
+    int getSize() const;
 };

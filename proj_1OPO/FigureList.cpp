@@ -79,3 +79,19 @@ FigureList::~FigureList() {
         current = next;
     } while (current != head);
 }
+
+//FigureNode* FigureList::getTail() {
+//    return tail;
+//}
+
+int FigureList::getSize() const
+{
+    int count = 0;
+    FigureNode* current = head;
+    if (head == nullptr) return 0;
+    do {
+        count++;
+        current = current->next;
+    } while (current != head);
+    return count;
+}

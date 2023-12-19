@@ -1,9 +1,10 @@
 #include "Cylinder.h"
+#include "Figure.h"
 #include <iostream>
 #include <sstream>
 #include <map>
 
-Cylinder::Cylinder(double d, const std::string& o, int bx, int by, int h, int br) : Figure(d, o), baseX(bx), baseY(by), height(h), baseRadius(br) {}
+Cylinder::Cylinder(double d, const std::string& o, double bx, double by, double h, double br) : Figure(d, o), baseX(bx), baseY(by), height(h), baseRadius(br) {}
 
 void Cylinder::print() const {
     Figure::print();
@@ -40,7 +41,7 @@ bool Cylinder::matchesCondition(const std::string& condition) const {
     cylinder_at = map_cylinder[keyword];
 
     char op;
-    float value;
-    iss >> op >> value;
-    return Switch_haha(op, cylinder_at, value);
+    double value;
+    if (isNumber_D(op, value, iss)) return Switch_haha(op, cylinder_at, value);
+    else return false;
 }
