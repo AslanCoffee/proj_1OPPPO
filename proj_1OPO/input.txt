@@ -1,12 +1,6 @@
-ADD 8.9 Aslan Sphere 6
+ADD 6.2 Yan Cylinder 3 5 5 7
 PRINT
-REM Density > bjhbhjbj
+ADD 6.2 Yan Cylinder 2 1 5 7
 PRINT
-ADD 3.0 Ivasdasan Cuboid 4 5 6
-PRINT
-REM Owner = Ivasdasan
-PRINT
-ADD 6.2 Yan Cylinder 3 3 5 7
-PRINT
-REM BaseX = 3
+REM BaseY < 6
 PRINT

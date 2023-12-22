@@ -3,7 +3,7 @@
 
 class Cylinder : public Figure {
 private:
-    int baseX, baseY, height, baseRadius;
+    double baseX, baseY, height, baseRadius;
 
 public:
     Cylinder(double d, const std::string& o, double bx, double by, double h, double br);

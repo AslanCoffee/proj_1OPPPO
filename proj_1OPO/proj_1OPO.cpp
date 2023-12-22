@@ -75,8 +75,8 @@ Figure* Factory(istringstream& iss)
         else break;
         break;
     case Cylinder_:
-        int bx, by, h, br;
-        if (isNumber(bx, iss) && isNumber(by, iss) && isNumber(h, iss) && isNumber(br, iss)) return new Cylinder(density, owner, bx, by, h, br);
+        double bx, by, h, br;
+        if (isNumber_D(bx, iss) && isNumber_D(by, iss) && isNumber_D(h, iss) && isNumber_D(br, iss)) return new Cylinder(density, owner, bx, by, h, br);
         else break;
         break;
     case Sphere_:

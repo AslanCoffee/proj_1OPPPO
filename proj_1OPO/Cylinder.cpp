@@ -22,9 +22,9 @@ bool Cylinder::matchesCondition(const std::string& condition) const {
         if (name == getOwner() && op == '=') return true;
     }
 
-    float cylinder_at;
+    double cylinder_at;
 
-    static std::map <std::string, float> map_cylinder =
+    std::map <std::string, double> map_cylinder =
     {
         {"BaseX", baseX},
         {"BaseY", baseY},
@@ -32,16 +32,11 @@ bool Cylinder::matchesCondition(const std::string& condition) const {
         {"BaseRadius", baseRadius},
         {"Density",  getDensity()}
     };
-    //map_cylinder["BaseX"] = baseX;
-    //map_cylinder["BaseY"] = baseY;
-    //map_cylinder["Height"] = height;
-    //map_cylinder["BaseRadius"] = baseRadius;
-    //map_cylinder["Density"] = getDensity();
 
     cylinder_at = map_cylinder[keyword];
 
     char op;
     double value;
-    if (isNumber_D(op, value, iss)) return Switch_haha(op, cylinder_at, value);
+    if (isNumber_D(op, value, iss) && cylinder_at != 0) return Switch_haha(op, cylinder_at, value);
     else return false;
 }

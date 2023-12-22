@@ -23,7 +23,7 @@ bool Cuboid::matchesCondition(const std::string& condition) const {
 
     float k_len;
 
-    static std::map <std::string, float> map_cuboid = {
+    std::map <std::string, float> map_cuboid = {
         {"Length1", length1},
         {"Length2", length2},
         {"Length3", length3},
@@ -38,6 +38,6 @@ bool Cuboid::matchesCondition(const std::string& condition) const {
 
     char op;
     double value;
-    if (isNumber_D(op, value, iss)) return Switch_haha(op, k_len, value);
+    if (isNumber_D(op, value, iss) && k_len != 0) return Switch_haha(op, k_len, value);
     else return false;
 }

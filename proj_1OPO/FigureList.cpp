@@ -3,7 +3,7 @@
 #include <fstream>
 #include <sstream>
 
-FigureList::FigureList() : head(nullptr), tail(nullptr) {}
+FigureList::FigureList() : head(nullptr), tail(nullptr), length (0) {}
 
 void FigureList::push_back(Figure* figure) {
     FigureNode* newNode = new FigureNode(figure);
@@ -11,33 +11,78 @@ void FigureList::push_back(Figure* figure) {
     if (!head) {
         head = newNode;
         tail = newNode;
-        tail->next = head;
     }
     else {
         tail->next = newNode;
-        tail = newNode;
-        tail->next = head;
+        tail = tail->next;
     }
+    tail->next = head;
+    length++;
 }
 
 void FigureList::removeIfMatches(const std::string& condition) {
     if (head == nullptr)
         return;
-
+    
     FigureNode* curr = head;
     FigureNode* prev = nullptr;
 
-    while (!curr->figure->matchesCondition(condition)) {
-        if (curr->next == head) {
-            return;
+    for (int i = getSize(); i > 0; i--)
+    {
+        if (curr->figure->matchesCondition(condition)) {
+            if (head == tail)
+            {
+                delete curr;
+                head = nullptr;
+                tail = nullptr;
+                length--;
+            }
+            else if(curr == head)
+            {
+                head = curr->next;
+                tail->next = head;
+                prev = tail;
+                delete curr;
+                curr = head;
+                length--;
+            }
+            else if(curr == tail)
+            {
+                tail = prev;
+                tail->next = head;
+                delete curr;
+                curr = head;
+                length--;
+            }
+            else
+            {
+                prev->next = curr->next;
+                delete curr;
+                curr = prev;
+            }
+            length--;
         }
-        prev = curr;
-        curr = curr->next;
+        if (head != nullptr) {
+            prev = curr;
+            curr = curr->next;
+        }
+        else break;
     }
 
-    if (curr->next == head) {
+    /*while (!curr->figure->matchesCondition(condition)) {
+        prev = curr;
+        curr = curr->next;
+    }*/
+
+    /*
+    if (curr->next == head && prev == nullptr) {
         delete curr;
         head = nullptr;
+    }
+    else if (curr->next == head && prev != nullptr) {
+        tail = curr->next;
+        prev->next = head;
+        delete curr;
     }
     else if (curr == head) {
         prev = head;
@@ -50,7 +95,7 @@ void FigureList::removeIfMatches(const std::string& condition) {
     else {
         prev->next = curr->next;
         delete curr;
-    }
+    }*/
 }
 
 void FigureList::printAll() const {
@@ -84,7 +129,7 @@ FigureList::~FigureList() {
 //    return tail;
 //}
 
-int FigureList::getSize() const
+int FigureList::getSize()
 {
     int count = 0;
     FigureNode* current = head;
